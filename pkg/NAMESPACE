@@ -1,0 +1,10 @@
+exportPattern("^[[:alpha:]]+")
+
+export(softmaxReg.default, softmaxReg.formula)
+
+## S4 Style All methods for imported generics:
+importFrom("methods", setClass, setMethod)
+
+# S3 Methods Definition
+S3method(softmaxReg, default)
+S3method(softmaxReg, formula)

@@ -105,6 +105,16 @@ Number of iteration reached before stop.
 Boolean variable for whether softmax model reached convergence.
 }
 }
+\references{
+%% ~put references to the literature/web site here ~
+MNIST Dataset HandWritten Digit Recognition: http://yann.lecun.com/exdb/mnist/
+
+MNIST Data Reading method reuse R code from: brendan o'connor - https://gist.github.com/brendano/39760
+
+Reuter 50 DataSet: UCI Archived Dataset:
+http://archive.ics.uci.edu/ml/machine-learning-databases/00217/C50.zip
+
+}
 \author{
 Xichen Ding
 }
@@ -258,14 +268,16 @@ table(yTest, yPred)
 ## brendan o'connor - https://gist.github.com/brendano/39760
 
 library(softmaxreg)
-path = "D:\\Machine_Learning_and_Data_Mining\\DeepLearning\\MNIST\\"
+# Replace with your local path
+path = "D:\\DeepLearning\\MNIST\\"
+
 ## 10-class classification, Digit 0-9
 x = load_image_file(paste(path,'train-images-idx3-ubyte', sep=""))
 y = load_label_file(paste(path,'train-labels-idx1-ubyte', sep=""))
 xTest = load_image_file(paste(path,'t10k-images-idx3-ubyte',sep=""))
 yTest = load_label_file(paste(path,'t10k-labels-idx1-ubyte', sep=""))
 
-## Normalization Input Data
+## Normalize Input Data
 x = x/255
 xTest = xTest/255
 
